@@ -1,0 +1,19 @@
+# Secrets & local configuration
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+
+# Local artifacts (e.g. simulation-output.local.json, personal workflow exports)
+*.local.json
+
+# Logs & OS / editor noise
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+coverage/

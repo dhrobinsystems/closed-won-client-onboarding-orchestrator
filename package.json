@@ -1,0 +1,37 @@
+{
+  "name": "closed-won-client-onboarding-orchestrator",
+  "version": "1.0.0",
+  "description": "Enterprise-grade n8n + Node.js post-sale orchestration: HubSpot Closed Won -> idempotent Slack, Google Drive, project workspace and LLM kickoff provisioning behind SANDBOX_MODE and a human-in-the-loop approval gate.",
+  "private": true,
+  "license": "MIT",
+  "author": "DH Robin <https://dhrobinsystems.com> (dhRobin Systems)",
+  "homepage": "https://github.com/dhrobinsystems/closed-won-client-onboarding-orchestrator#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhrobinsystems/closed-won-client-onboarding-orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dhrobinsystems/closed-won-client-onboarding-orchestrator/issues"
+  },
+  "keywords": [
+    "n8n",
+    "hubspot",
+    "slack",
+    "google-drive",
+    "client-onboarding",
+    "revenue-operations",
+    "revops",
+    "idempotency",
+    "human-in-the-loop",
+    "automation"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build-workflows.js",
+    "check": "node scripts/check-workflows.js",
+    "simulate": "node scripts/simulate.js"
+  }
+}
