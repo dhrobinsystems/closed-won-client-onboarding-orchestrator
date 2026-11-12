@@ -39,12 +39,6 @@ Built and maintained by **DH Robin** ([dhRobin Systems](https://dhrobinsystems.c
 
 ## Architecture
 
-### 1. Closed Won Provisioning Orchestrator
-![Closed Won Provisioning Orchestrator Workflow](assets/workflow-01-provisioning-orchestrator.png)
-
-### 2. Client Invite Approval Dispatcher
-![Client Invite Approval Dispatcher Workflow](assets/workflow-02-approval-dispatcher.png)
-
 Business logic is written once in `src/` as pure, dependency-free CommonJS modules and tested with `node --test`. `npm run build` compiles it into the Code nodes of the n8n workflows, and CI fails if the workflows drift from `src/`. See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the full design.
 
 ### Workflow 01: Closed Won Provisioning Orchestrator
