@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Test & check (Node.js ${{ matrix.node-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run unit & workflow tests
+        run: npm test
+
+      - name: Validate workflows, credentials, secrets and sandbox gates
+        run: npm run check
+
+      - name: Verify workflows are built from src/ (no drift)
+        run: |
+          npm run build
+          git diff --exit-code -- workflows/
